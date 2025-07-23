@@ -26,6 +26,44 @@ class ProductFactory(factory.Factory):
     """Creates fake products for testing"""
 
     class Meta:
+        model = Product
+
+    id = factory.Sequence(lambda n: nn)
+    name = FuzzyChoice(
+        choices=[
+            "Hat",
+            "Pants",
+            "Shirt",
+            "Apple",
+            "Banana",
+            "Pots",
+            "Towels",
+            "Ford",
+            "Chevy",
+            "Hammer",
+            "Wrench"
+        ]
+    )
+    description = factory.faker('text')
+    price = FuzzyDecimal(0.5,2000.00,2)
+    available = FuzzyChoice(
+        choices=[
+            'True',
+            'False'
+        ]
+    )
+    category = FuzzyChoice(
+        choices=[
+            Category.UNKNOWN,
+            Category.CLOTHS,
+            Category.FOOD,
+            Category.HOUSEWARES,
+            Category.AUTOMOTIVE,
+            Category.TOOLS
+        ]
+    )
+
+    class Meta:
         """Maps factory to data model"""
 
         model = Product
