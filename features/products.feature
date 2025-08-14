@@ -38,3 +38,31 @@ Scenario: Create a Product
     And I should see "True" in the "Available" dropdown
     And I should see "Tools" in the "Category" dropdown
     And I should see "34.95" in the "Price" field
+
+Scenario: Read a Product
+    When
+    Then
+
+Scenario: Update a Product
+    When
+    Then
+
+Scenario: Delete a Product
+    When
+    Then
+
+Scenario: List all Products
+    When
+    Then
+
+Scenario: Search for Products by Category
+    When
+    Then
+
+Scenario: Seaerch for Products by Availability
+    When
+    Then
+
+Scenario: Search for Products by Name
+    When
+    Then
