@@ -78,6 +78,7 @@ def step_impl(context, element_name):
 ##################################################################
 # These two function simulate copy and paste
 ##################################################################
+
 @when('I copy the "{element_name}" field')
 def step_impl(context, element_name):
     element_id = ID_PREFIX + element_name.lower().replace(' ', '_')
@@ -105,6 +106,7 @@ def step_impl(context, element_name):
 ##################################################################
 
 ## UPDATE CODE HERE ##
+
 @when('I press the "{button}" button')
 def step_impl(context, button):
     button_id = button.lower() + '-btn'
@@ -113,7 +115,7 @@ def step_impl(context, button):
 @then('I should see "{name}" in the results')
 def step_impl(context, name):
     found = WebDriverWait(context.driver, context.wait_seconds).until(
-        expected_conditions.text_to_be_present_in_element_value(
+        expected_conditions.text_to_be_present_in_element(
             (By.ID, 'search_results'),
             name
         )
