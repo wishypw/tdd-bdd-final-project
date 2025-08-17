@@ -42,12 +42,12 @@ Scenario: Create a Product
 Scenario: Read a Product
     When I visit the "Home Page"
     And I set the "Name" to "Hat"
-    And I select the "Search" button
-    Then I sould see the message "Success"
+    And I press the "Search" button
+    Then I should see the message "Success"
     When I copy the "Id" field
-    And select the "Clear" button
-    And paste the "Id" field 
-    And select the "Retrieve" button
+    And I press the "Clear" button
+    And I paste the "Id" field 
+    And I press the "Retrieve" button
     Then I should see the message "Success"
     And I should see "Hat" in the "Name" field
     And I should see "A red fedora" in the "Description" field
